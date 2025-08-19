@@ -3,6 +3,8 @@
 // Inicializamos un arreglo para almacenar los nombres de mis amigos
 
 let nombresDeAmigos = [];
+let lista = document.querySelector('#listaAmigos');
+let resultado = document.querySelector('#resultado');
 
 function agregarAmigo(){
     //Hacemos un push al arreglo del elemento introducido en el cuadro de texto
@@ -26,8 +28,6 @@ function limpiarCuadro() {
 }
 
 function mostrarListaHTML(){
-    let lista = document.querySelector('#listaAmigos');
-
     lista.innerHTML = ""; //limpia la lista, esto evita que se repitan nombres
 
     for (let i = 0; i < nombresDeAmigos.length; i++) {
@@ -35,4 +35,11 @@ function mostrarListaHTML(){
         li.textContent = nombresDeAmigos[i];     // mete el texto al <li>
         lista.appendChild(li);                   // mete el li<> a la lista
     }
+}
+
+function sortearAmigo(){
+    let tamañoArreglo = nombresDeAmigos.length;
+    numeroDeAmigoSorteado = Math.floor(Math.random()*tamañoArreglo);
+    lista.innerHTML = ""; //se limpia la lista antes de mostrar el resultado
+    resultado.innerHTML = `Tu amigo secreto es ${nombresDeAmigos[numeroDeAmigoSorteado]}`;
 }
