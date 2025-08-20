@@ -48,9 +48,9 @@ JavaScript (DOM y Math.random) para la lógica del sorteo.
  ┣ 📂 assets
  ┃ ┣ amigo-secreto.png
  ┃ ┣ play_circle_outline.png
- ┃ ┣ screenshot1.png   ← (captura que agregues tú)
- ┃ ┣ screenshot2.png   ← (captura que agregues tú)
- ┃ ┗ screenshot3.png   ← (captura que agregues tú)
+ ┃ ┣ screenshot1.png
+ ┃ ┣ screenshot2.png
+ ┃ ┗ screenshot3.png
  ┣ 📜 index.html
  ┣ 📜 style.css
  ┣ 📜 app.js
