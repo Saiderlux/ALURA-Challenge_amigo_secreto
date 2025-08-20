@@ -11,11 +11,13 @@ function agregarAmigo(){
     let input;
     input = document.querySelector('#amigo');
 
-    if(input.value==='')
+    if(input.value.trim()==='') // usamos trim para que borre los espacios y pueda ver si no tiene texto
         alert('El cuadro de texto está vacío');
     else{
         nombresDeAmigos.push(input.value.trim());//Usé trim para eliminar espacios en blanco, al inicio y final de la cadena, que el usuario pueda ingresar
     }
+
+    
 
     input.focus(); // Para que el cursor ya esté en el cuadro de texto, creo que lo  hará más cómodo
     limpiarCuadro();
@@ -38,6 +40,11 @@ function mostrarListaHTML(){
 }
 
 function sortearAmigo(){
+     if (nombresDeAmigos.length < 2) {
+        alert('Debes agregar al menos 2 amigos antes de sortear.');
+        return; // sale de la función sin hacer el sorteo hasta que se agreguen dos amigos
+    }
+
     let tamañoArreglo = nombresDeAmigos.length;
     numeroDeAmigoSorteado = Math.floor(Math.random()*tamañoArreglo);
     lista.innerHTML = ""; //se limpia la lista antes de mostrar el resultado
